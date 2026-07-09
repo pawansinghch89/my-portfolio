@@ -3,91 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Tanu Sharma ❤️</title>
+<title>Favourite Person ❤️</title>
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, sans-serif;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    body{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        height:100vh;
-        background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-    }
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+}
 
-    .card{
-        background:white;
-        padding:30px;
-        border-radius:15px;
-        text-align:center;
-        box-shadow:0 8px 20px rgba(0,0,0,0.2);
-        width:350px;
-    }
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+    width:350px;
+}
 
-    h1{
-        color:#ff3366;
-        margin-bottom:15px;
-    }
+h2{
+    color:#ff4d6d;
+    margin-bottom:20px;
+}
 
-    p{
-        font-size:20px;
-        margin-bottom:25px;
-    }
+input{
+    width:100%;
+    padding:12px;
+    border:2px solid #ff4d6d;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+}
 
-    button{
-        padding:12px 30px;
-        font-size:18px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-        margin:10px;
-        transition:.3s;
-    }
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-    .yes{
-        background:#28a745;
-        color:white;
-    }
-
-    .yes:hover{
-        background:#218838;
-    }
-
-    .no{
-        background:#dc3545;
-        color:white;
-    }
-
-    .no:hover{
-        background:#c82333;
-    }
+button:hover{
+    background:#e63956;
+}
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="card">
-    <h1>❤️ Tanu Sharma ❤️</h1>
+<div class="container">
+    <h2>❤️ Enter Your Name ❤️</h2>
 
-    <p>Will you be my friend?</p>
+    <input type="text" id="name" placeholder="Enter your name">
 
-    <button class="yes" onclick="yesClick()">Yes</button>
-    <button class="no" onclick="noClick()">No</button>
+    <button onclick="checkName()">Submit</button>
 </div>
 
 <script>
-function yesClick(){
-    alert("Yay! ❤️ Thank you, Tanu Sharma!");
-}
+function checkName(){
 
-function noClick(){
-    alert("Yes ❤️");
+    let name = document.getElementById("name").value.trim().toLowerCase();
+
+    if(name === "tanu sharma"){
+        alert("🥺 You are my favourite person ❤️");
+    }
+    else{
+        alert("😏 Stay Away!");
+    }
+
 }
 </script>
 
