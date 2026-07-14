@@ -3,88 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Favourite Person ❤️</title>
+<title>I'm Sorry</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
+    height:100vh;
+    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffd1ff,#ffdde1);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
 }
 
-.container{
-    background:white;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+    width:90%;
+    max-width:700px;
     padding:30px;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    border-radius:25px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
     text-align:center;
-    width:350px;
+    color:white;
+    box-shadow:0 0 35px rgba(0,0,0,.3);
+    animation:fade 1.5s;
+    z-index:10;
 }
 
-h2{
-    color:#ff4d6d;
-    margin-bottom:20px;
+@keyframes fade{
+from{opacity:0;transform:translateY(50px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-input{
-    width:100%;
-    padding:12px;
-    border:2px solid #ff4d6d;
-    border-radius:8px;
-    font-size:16px;
-    outline:none;
+h1{
+    font-size:48px;
+    color:#fff;
+    text-shadow:0 0 15px red;
+    margin-bottom:15px;
+}
+
+img{
+    width:300px;
+    border-radius:20px;
+    margin:20px 0;
+    box-shadow:0 0 25px rgba(255,255,255,.7);
+}
+
+p{
+    font-size:20px;
+    line-height:1.7;
 }
 
 button{
-    margin-top:20px;
-    padding:12px 25px;
-    background:#ff4d6d;
-    color:white;
+    margin-top:25px;
+    padding:15px 35px;
+    font-size:20px;
     border:none;
-    border-radius:8px;
-    font-size:16px;
+    border-radius:50px;
+    background:#ff3366;
+    color:white;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
+    box-shadow:0 0 20px #ff3366;
 }
 
 button:hover{
-    background:#e63956;
+    transform:scale(1.1);
+    background:#ff0044;
+}
+
+.heart{
+    position:absolute;
+    animation:float 7s linear infinite;
+    opacity:.9;
+    pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(.5);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120px) scale(1.5);
+opacity:0;
+}
+}
+
+.popup{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    color:#ff3366;
+    padding:25px;
+    border-radius:20px;
+    display:none;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+.popup h2{
+margin-bottom:10px;
+}
+
+.footer{
+    margin-top:20px;
+    font-size:15px;
+    opacity:.8;
 }
 </style>
 
 </head>
 <body>
 
-<div class="container">
-    <h2>❤️ Enter Your Name ❤️</h2>
+<div class="card">
 
-    <input type="text" id="name" placeholder="Enter your name">
+<h1>🥺 I'm Sorry</h1>
 
-    <button onclick="checkName()">Submit</button>
+<img src="https://i.pinimg.com/originals/93/cc/f5/93ccf58d8896de77fc7d0318a4d8869c.gif" alt="Sorry GIF">
+
+<p>
+<b>Sorry yrr Shubhpreet</b> 🥺<br><br>
+
+Sorry... Sorry... Sorry... 😭<br>
+Please forgive me. 💔
+</p>
+
+<button onclick="forgive()">💖 Please Forgive Me 💖</button>
+
+<div class="footer"></div>
+
+</div>
+
+<div class="popup" id="popup">
+<h2>🥺 I'm Really Sorry</h2>
+<p>
+Please forgive me, Shubhpreet. 😭<br>
+I promise this will never happen again. ❤️
+</p>
 </div>
 
 <script>
-function checkName(){
 
-    let name = document.getElementById("name").value.trim().toLowerCase();
+// Floating Crying Emojis 😭
+for(let i=0;i<40;i++){
 
-    if(name === "tanu sharma"){
-        alert("🥺 You are my favourite person ❤️");
-    }
-    else{
-        alert("😏 Stay Away!");
+    let heart=document.createElement("div");
+
+    heart.innerHTML="😭";
+
+    heart.className="heart";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(20+Math.random()*40)+"px";
+
+    heart.style.animationDuration=(4+Math.random()*5)+"s";
+
+    heart.style.animationDelay=Math.random()*5+"s";
+
+    document.body.appendChild(heart);
+
+}
+
+function forgive(){
+
+    document.getElementById("popup").style.display="block";
+
+    // Launch more crying emojis
+    for(let i=0;i<60;i++){
+
+        let h=document.createElement("div");
+
+        h.innerHTML="😭";
+
+        h.style.position="fixed";
+        h.style.left=Math.random()*100+"vw";
+        h.style.top="100vh";
+        h.style.fontSize="30px";
+        h.style.transition="3s linear";
+        h.style.pointerEvents="none";
+        h.style.zIndex="1000";
+
+        document.body.appendChild(h);
+
+        setTimeout(()=>{
+            h.style.top="-100px";
+        },10);
+
+        setTimeout(()=>{
+            h.remove();
+        },3000);
+
     }
 
 }
+
 </script>
 
 </body>
