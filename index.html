@@ -2,23 +2,20 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Pawan Singh - Computer Science Student Portfolio">
+        content="Pawan Singh - Computer Science Student Portfolio">
 
     <title>Pawan Singh | Portfolio</title>
 
-
     <style>
 
-        /* =========================================
+        /* =========================
            RESET
-        ========================================= */
+        ========================= */
 
         * {
             margin: 0;
@@ -35,7 +32,6 @@
             background: #0f172a;
             color: white;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         a {
@@ -44,9 +40,9 @@
         }
 
 
-        /* =========================================
+        /* =========================
            SCROLLBAR
-        ========================================= */
+        ========================= */
 
         ::-webkit-scrollbar {
             width: 8px;
@@ -62,18 +58,18 @@
         }
 
 
-        /* =========================================
+        /* =========================
            NAVBAR
-        ========================================= */
+        ========================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.96);
 
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
 
             border-bottom: 1px solid #334155;
         }
@@ -84,28 +80,28 @@
 
             margin: auto;
 
-            padding: 20px 0;
+            min-height: 75px;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             color: #38bdf8;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 25px;
             list-style: none;
         }
 
         .nav-links a {
             color: white;
-            font-size: 15px;
+            font-weight: 600;
             transition: 0.3s;
         }
 
@@ -114,16 +110,16 @@
         }
 
 
-        /* =========================================
-           HERO SECTION
-        ========================================= */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            min-height: 92vh;
+            min-height: calc(100vh - 75px);
 
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
             text-align: center;
 
@@ -133,61 +129,22 @@
                 radial-gradient(
                     circle at top,
                     #1e3a5f,
-                    #0f172a 60%
+                    #0f172a 65%
                 );
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            background: #38bdf8;
-
-            filter: blur(150px);
-
-            opacity: 0.08;
-
-            top: -100px;
-            left: -100px;
-        }
-
-        .hero::after {
-            content: "";
-
-            position: absolute;
-
-            width: 300px;
-            height: 300px;
-
-            background: #818cf8;
-
-            filter: blur(150px);
-
-            opacity: 0.08;
-
-            bottom: -100px;
-            right: -100px;
         }
 
         .hero-content {
             max-width: 850px;
-            z-index: 2;
         }
 
 
-        /* =========================================
-           PROFILE PHOTO
-        ========================================= */
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
 
         .profile-photo {
+            display: block;
+
             width: 200px;
             height: 200px;
 
@@ -197,11 +154,11 @@
 
             border: 5px solid #38bdf8;
 
-            margin-bottom: 25px;
+            margin: 0 auto 25px;
 
             box-shadow:
                 0 0 35px
-                rgba(56, 189, 248, 0.30);
+                rgba(56, 189, 248, 0.35);
 
             transition: 0.4s;
         }
@@ -210,30 +167,30 @@
             transform: scale(1.05);
 
             box-shadow:
-                0 0 50px
-                rgba(56, 189, 248, 0.45);
+                0 0 55px
+                rgba(56, 189, 248, 0.5);
         }
 
 
-        /* =========================================
+        /* =========================
            HERO TEXT
-        ========================================= */
+        ========================= */
 
         .hero h3 {
+            color: #cbd5e1;
             font-size: 22px;
-            color: #94a3b8;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .hero h1 {
-            font-size: 68px;
             color: #38bdf8;
+            font-size: 65px;
             margin-bottom: 10px;
         }
 
         .hero h2 {
             font-size: 30px;
-            min-height: 48px;
+            min-height: 45px;
             margin-bottom: 20px;
         }
 
@@ -241,9 +198,8 @@
             color: white;
         }
 
-        .hero p {
+        .hero-description {
             max-width: 700px;
-
             margin: auto;
 
             color: #cbd5e1;
@@ -252,26 +208,25 @@
         }
 
 
-        /* =========================================
+        /* =========================
            BUTTONS
-        ========================================= */
+        ========================= */
 
         .buttons {
-            margin-top: 30px;
-
             display: flex;
-
             justify-content: center;
 
             flex-wrap: wrap;
 
-            gap: 10px;
+            gap: 15px;
+
+            margin-top: 30px;
         }
 
         .btn {
             display: inline-block;
 
-            padding: 13px 27px;
+            padding: 13px 25px;
 
             border-radius: 8px;
 
@@ -287,10 +242,10 @@
         }
 
         .btn:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
 
             box-shadow:
-                0 10px 30px
+                0 10px 25px
                 rgba(56, 189, 248, 0.25);
         }
 
@@ -305,9 +260,9 @@
         }
 
 
-        /* =========================================
-           GENERAL SECTIONS
-        ========================================= */
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
             width: 90%;
@@ -315,7 +270,7 @@
 
             margin: auto;
 
-            padding: 100px 0;
+            padding: 90px 0;
         }
 
         .section-title {
@@ -325,7 +280,7 @@
 
             color: #38bdf8;
 
-            margin-bottom: 55px;
+            margin-bottom: 50px;
         }
 
         .section-title::after {
@@ -334,20 +289,19 @@
             display: block;
 
             width: 70px;
-
             height: 4px;
 
             background: #38bdf8;
 
-            margin: 12px auto 0;
-
             border-radius: 10px;
+
+            margin: 12px auto 0;
         }
 
 
-        /* =========================================
+        /* =========================
            ABOUT
-        ========================================= */
+        ========================= */
 
         .about {
             max-width: 850px;
@@ -366,48 +320,46 @@
         }
 
 
-        /* =========================================
+        /* =========================
            SKILLS
-        ========================================= */
+        ========================= */
 
         .skills-container {
             display: flex;
 
-            flex-wrap: wrap;
-
             justify-content: center;
+
+            flex-wrap: wrap;
 
             gap: 15px;
         }
 
         .skill {
+            padding: 13px 23px;
+
             background: #1e293b;
 
             border: 1px solid #334155;
 
-            padding: 14px 25px;
-
             border-radius: 10px;
+
+            color: white;
 
             transition: 0.3s;
         }
 
         .skill:hover {
-            transform: translateY(-6px);
+            color: #38bdf8;
 
             border-color: #38bdf8;
 
-            color: #38bdf8;
-
-            box-shadow:
-                0 8px 25px
-                rgba(56, 189, 248, 0.12);
+            transform: translateY(-5px);
         }
 
 
-        /* =========================================
+        /* =========================
            PROJECTS
-        ========================================= */
+        ========================= */
 
         .projects-container {
             display: grid;
@@ -432,11 +384,9 @@
 
             padding: 32px;
 
-            position: relative;
-
-            overflow: hidden;
-
             transition: 0.4s;
+
+            position: relative;
         }
 
         .project-card::before {
@@ -451,16 +401,18 @@
             height: 4px;
 
             background: #38bdf8;
+
+            border-radius: 18px 18px 0 0;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
 
             border-color: #38bdf8;
 
             box-shadow:
                 0 15px 40px
-                rgba(0, 0, 0, 0.35);
+                rgba(0, 0, 0, 0.3);
         }
 
         .project-top {
@@ -472,43 +424,43 @@
 
             gap: 15px;
 
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .project-card h3 {
             color: #38bdf8;
 
-            font-size: 25px;
+            font-size: 24px;
 
             line-height: 1.3;
         }
 
         .project-date {
-            color: #94a3b8;
-
-            font-size: 14px;
-
-            white-space: nowrap;
-
             background: #0f172a;
+
+            color: #94a3b8;
 
             padding: 5px 10px;
 
             border-radius: 6px;
+
+            font-size: 13px;
+
+            white-space: nowrap;
         }
 
         .project-card > p {
             color: #cbd5e1;
 
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .project-card ul {
             padding-left: 20px;
 
-            margin: 18px 0;
-
             color: #cbd5e1;
+
+            margin-bottom: 20px;
         }
 
         .project-card li {
@@ -526,17 +478,17 @@
 
             gap: 8px;
 
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
 
         .tech {
+            padding: 5px 10px;
+
             background: #0f172a;
 
             color: #38bdf8;
 
             border: 1px solid #334155;
-
-            padding: 5px 10px;
 
             border-radius: 5px;
 
@@ -546,15 +498,13 @@
         .project-link {
             display: inline-block;
 
-            margin-top: 10px;
+            background: #38bdf8;
+
+            color: #0f172a;
 
             padding: 10px 18px;
 
             border-radius: 7px;
-
-            background: #38bdf8;
-
-            color: #0f172a;
 
             font-weight: bold;
 
@@ -563,16 +513,12 @@
 
         .project-link:hover {
             transform: translateX(5px);
-
-            box-shadow:
-                0 8px 20px
-                rgba(56, 189, 248, 0.20);
         }
 
 
-        /* =========================================
+        /* =========================
            EDUCATION
-        ========================================= */
+        ========================= */
 
         .education-container {
             display: grid;
@@ -590,31 +536,23 @@
 
             border-radius: 15px;
 
+            border: 1px solid #334155;
+
             border-left: 5px solid #38bdf8;
-
-            border-top: 1px solid #334155;
-
-            border-right: 1px solid #334155;
-
-            border-bottom: 1px solid #334155;
 
             transition: 0.3s;
         }
 
         .education-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-7px);
 
             border-color: #38bdf8;
-
-            box-shadow:
-                0 10px 30px
-                rgba(0, 0, 0, 0.3);
         }
 
         .education-card h3 {
             color: #38bdf8;
 
-            font-size: 22px;
+            font-size: 21px;
 
             margin-bottom: 20px;
         }
@@ -630,12 +568,16 @@
         }
 
 
-        /* =========================================
-           CV SECTION
-        ========================================= */
+        /* =========================
+           CV
+        ========================= */
 
         .cv-section {
             text-align: center;
+
+            padding: 65px 30px;
+
+            border-radius: 20px;
 
             background:
                 linear-gradient(
@@ -644,19 +586,19 @@
                     #0f172a
                 );
 
-            border-radius: 20px;
-
-            padding: 70px 30px;
-
             border: 1px solid #334155;
         }
 
-        .cv-section p {
-            color: #cbd5e1;
+        .cv-section .section-title {
+            margin-bottom: 25px;
+        }
 
+        .cv-section p {
             max-width: 650px;
 
-            margin: 0 auto 25px;
+            margin: 0 auto 30px;
+
+            color: #cbd5e1;
         }
 
         .cv-buttons {
@@ -670,9 +612,9 @@
         }
 
 
-        /* =========================================
+        /* =========================
            CONTACT
-        ========================================= */
+        ========================= */
 
         .contact {
             text-align: center;
@@ -681,12 +623,10 @@
         .contact p {
             color: #cbd5e1;
 
-            margin: 12px 0;
+            margin: 10px;
         }
 
         .social-links {
-            margin-top: 30px;
-
             display: flex;
 
             justify-content: center;
@@ -694,6 +634,8 @@
             flex-wrap: wrap;
 
             gap: 15px;
+
+            margin-top: 30px;
         }
 
         .social-links a {
@@ -717,9 +659,9 @@
         }
 
 
-        /* =========================================
+        /* =========================
            FOOTER
-        ========================================= */
+        ========================= */
 
         footer {
             text-align: center;
@@ -734,9 +676,9 @@
         }
 
 
-        /* =========================================
-           BACK TO TOP
-        ========================================= */
+        /* =========================
+           TOP BUTTON
+        ========================= */
 
         #topButton {
             position: fixed;
@@ -746,7 +688,6 @@
             bottom: 25px;
 
             width: 45px;
-
             height: 45px;
 
             border: none;
@@ -766,18 +707,12 @@
             display: none;
 
             z-index: 999;
-
-            transition: 0.3s;
-        }
-
-        #topButton:hover {
-            transform: translateY(-5px);
         }
 
 
-        /* =========================================
+        /* =========================
            SCROLL ANIMATION
-        ========================================= */
+        ========================= */
 
         .fade-in {
             opacity: 0;
@@ -796,9 +731,9 @@
         }
 
 
-        /* =========================================
+        /* =========================
            RESPONSIVE
-        ========================================= */
+        ========================= */
 
         @media (max-width: 950px) {
 
@@ -810,6 +745,7 @@
                 grid-template-columns:
                     repeat(2, 1fr);
             }
+
         }
 
 
@@ -818,15 +754,21 @@
             nav {
                 flex-direction: column;
 
+                padding: 18px 0;
+
                 gap: 15px;
             }
 
             .nav-links {
-                gap: 15px;
-
                 flex-wrap: wrap;
 
                 justify-content: center;
+
+                gap: 13px;
+            }
+
+            .hero {
+                padding-top: 50px;
             }
 
             .hero h1 {
@@ -838,8 +780,8 @@
             }
 
             .profile-photo {
-                width: 160px;
-                height: 160px;
+                width: 165px;
+                height: 165px;
             }
 
             .section-title {
@@ -854,23 +796,20 @@
                 flex-direction: column;
             }
 
-            section {
-                padding: 70px 0;
-            }
         }
 
 
         @media (max-width: 480px) {
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 37px;
             }
 
             .hero h2 {
-                font-size: 20px;
+                font-size: 19px;
             }
 
-            .hero p {
+            .hero-description {
                 font-size: 15px;
             }
 
@@ -882,9 +821,11 @@
                 font-size: 21px;
             }
 
-            .nav-links {
-                font-size: 13px;
+            section {
+                width: 92%;
+                padding: 70px 0;
             }
+
         }
 
     </style>
@@ -895,9 +836,9 @@
 <body>
 
 
-    <!-- =========================================
+    <!-- =========================
          NAVIGATION
-    ========================================== -->
+    ========================== -->
 
     <header>
 
@@ -945,20 +886,26 @@
     </header>
 
 
-    <!-- =========================================
-         HERO
-    ========================================== -->
 
-    <section id="home"
-             class="hero">
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section id="home" class="hero">
 
         <div class="hero-content">
 
 
-            <!-- YOUR PHOTO -->
+            <!-- =====================================
+                 YOUR PHOTO
+
+                 IMPORTANT:
+                 singh.jpeg must be in the
+                 SAME folder as index.html.
+            ====================================== -->
 
             <img
-                src="images/singh.jpeg"
+                src="./singh.jpeg"
                 alt="Pawan Singh"
                 class="profile-photo"
             >
@@ -979,7 +926,7 @@
             </h2>
 
 
-            <p>
+            <p class="hero-description">
 
                 I am a passionate Computer Science student
                 interested in programming, web development,
@@ -991,19 +938,12 @@
 
             <div class="buttons">
 
-                <a href="#projects"
-                   class="btn">
-
+                <a href="#projects" class="btn">
                     View My Projects
-
                 </a>
 
-
-                <a href="#cv"
-                   class="btn btn-outline">
-
+                <a href="#cv" class="btn btn-outline">
                     View My CV
-
                 </a>
 
             </div>
@@ -1013,12 +953,12 @@
     </section>
 
 
-    <!-- =========================================
-         ABOUT
-    ========================================== -->
 
-    <section id="about"
-             class="fade-in">
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about" class="fade-in">
 
         <h2 class="section-title">
             About Me
@@ -1047,12 +987,12 @@
     </section>
 
 
-    <!-- =========================================
-         SKILLS
-    ========================================== -->
 
-    <section id="skills"
-             class="fade-in">
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills" class="fade-in">
 
         <h2 class="section-title">
             My Skills
@@ -1106,12 +1046,12 @@
     </section>
 
 
-    <!-- =========================================
-         PROJECTS
-    ========================================== -->
 
-    <section id="projects"
-             class="fade-in">
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects" class="fade-in">
 
         <h2 class="section-title">
             My Projects
@@ -1121,7 +1061,9 @@
         <div class="projects-container">
 
 
-            <!-- SMART IRRIGATION -->
+            <!-- =========================
+                 PROJECT 1
+            ========================== -->
 
             <div class="project-card">
 
@@ -1221,15 +1163,16 @@
                     rel="noopener noreferrer"
                     class="project-link"
                 >
-
                     View Project →
-
                 </a>
 
             </div>
 
 
-            <!-- AGRISARTHI -->
+
+            <!-- =========================
+                 PROJECT 2
+            ========================== -->
 
             <div class="project-card">
 
@@ -1334,9 +1277,7 @@
                     rel="noopener noreferrer"
                     class="project-link"
                 >
-
                     View Project →
-
                 </a>
 
             </div>
@@ -1346,12 +1287,12 @@
     </section>
 
 
-    <!-- =========================================
-         EDUCATION
-    ========================================== -->
 
-    <section id="education"
-             class="fade-in">
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education" class="fade-in">
 
         <h2 class="section-title">
             Education
@@ -1488,12 +1429,12 @@
     </section>
 
 
-    <!-- =========================================
-         CV
-    ========================================== -->
 
-    <section id="cv"
-             class="fade-in">
+    <!-- =========================
+         CV
+    ========================== -->
+
+    <section id="cv" class="fade-in">
 
         <div class="cv-section">
 
@@ -1513,16 +1454,13 @@
 
             <div class="cv-buttons">
 
-
                 <a
                     href="https://drive.google.com/file/d/1ff0R5_YrpS4IdUw4ooBWxNs2fboRp83t/view?usp=drivesdk"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn"
                 >
-
                     📄 View My CV
-
                 </a>
 
 
@@ -1532,9 +1470,7 @@
                     rel="noopener noreferrer"
                     class="btn btn-outline"
                 >
-
                     ⬇ Download CV
-
                 </a>
 
             </div>
@@ -1544,12 +1480,12 @@
     </section>
 
 
-    <!-- =========================================
-         CONTACT
-    ========================================== -->
 
-    <section id="contact"
-             class="contact fade-in">
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact" class="contact fade-in">
 
         <h2 class="section-title">
             Contact Me
@@ -1557,30 +1493,24 @@
 
 
         <p>
-            Email:
-            your@email.com
+            Email: your@email.com
         </p>
 
 
         <p>
-
             Feel free to contact me for projects,
             collaboration and opportunities.
-
         </p>
 
 
         <div class="social-links">
-
 
             <a
                 href="https://github.com/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-
                 GitHub
-
             </a>
 
 
@@ -1589,16 +1519,12 @@
                 target="_blank"
                 rel="noopener noreferrer"
             >
-
                 LinkedIn
-
             </a>
 
 
             <a href="mailto:your@email.com">
-
                 Email
-
             </a>
 
         </div>
@@ -1606,69 +1532,57 @@
     </section>
 
 
-    <!-- =========================================
+
+    <!-- =========================
          FOOTER
-    ========================================== -->
+    ========================== -->
 
     <footer>
 
         <p>
-
-            ©️ 2026 Pawan Singh.
-            All Rights Reserved.
-
+            ©️ 2026 Pawan Singh. All Rights Reserved.
         </p>
 
     </footer>
 
 
-    <!-- =========================================
+
+    <!-- =========================
          BACK TO TOP
-    ========================================== -->
+    ========================== -->
 
     <button
         id="topButton"
         aria-label="Back to top"
     >
-
         ↑
-
     </button>
 
 
-    <!-- =========================================
+
+    <!-- =========================
          JAVASCRIPT
-    ========================================== -->
+    ========================== -->
 
     <script>
 
-        /* =========================================
-           TYPING ANIMATION
-        ========================================== */
+        /* =========================
+           TYPING EFFECT
+        ========================== */
 
         const typingElement =
             document.getElementById("typing");
 
-
         const words = [
-
             "Computer Science Student",
-
             "C++ Developer",
-
             "Web Developer",
-
             "AI Enthusiast",
-
             "Future Software Engineer"
-
         ];
 
-
         let wordIndex = 0;
-
         let characterIndex = 0;
-
         let deleting = false;
 
 
@@ -1721,12 +1635,10 @@
 
                     wordIndex++;
 
-
                     if (
                         wordIndex ===
                         words.length
                     ) {
-
                         wordIndex = 0;
                     }
 
@@ -1747,23 +1659,19 @@
 
 
 
-        /* =========================================
+        /* =========================
            BACK TO TOP
-        ========================================== */
+        ========================== */
 
         const topButton =
-            document.getElementById(
-                "topButton"
-            );
+            document.getElementById("topButton");
 
 
         window.addEventListener(
             "scroll",
             function () {
 
-                if (
-                    window.scrollY > 400
-                ) {
+                if (window.scrollY > 400) {
 
                     topButton.style.display =
                         "block";
@@ -1784,11 +1692,8 @@
             function () {
 
                 window.scrollTo({
-
                     top: 0,
-
                     behavior: "smooth"
-
                 });
 
             }
@@ -1796,14 +1701,12 @@
 
 
 
-        /* =========================================
-           SCROLL REVEAL
-        ========================================== */
+        /* =========================
+           SCROLL ANIMATION
+        ========================== */
 
         const fadeElements =
-            document.querySelectorAll(
-                ".fade-in"
-            );
+            document.querySelectorAll(".fade-in");
 
 
         function revealOnScroll() {
@@ -1820,9 +1723,7 @@
                         window.innerHeight - 100
                     ) {
 
-                        element.classList.add(
-                            "show"
-                        );
+                        element.classList.add("show");
 
                     }
 
@@ -1839,44 +1740,6 @@
 
 
         revealOnScroll();
-
-
-
-        /* =========================================
-           NAVBAR ACTIVE LINK
-        ========================================== */
-
-        const navLinks =
-            document.querySelectorAll(
-                ".nav-links a"
-            );
-
-
-        navLinks.forEach(
-            function (link) {
-
-                link.addEventListener(
-                    "click",
-                    function () {
-
-                        navLinks.forEach(
-                            function (item) {
-
-                                item.style.color =
-                                    "#ffffff";
-
-                            }
-                        );
-
-
-                        this.style.color =
-                            "#38bdf8";
-
-                    }
-                );
-
-            }
-        );
 
     </script>
 
