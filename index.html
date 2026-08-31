@@ -2,15 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Your Name | Portfolio</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Pawan Singh - Computer Science Student Portfolio">
+
+    <title>Pawan Singh | Portfolio</title>
+
 
     <style>
-        /* =========================
-           BASIC RESET
-        ========================= */
+
+        /* =========================================
+           RESET
+        ========================================= */
 
         * {
             margin: 0;
@@ -23,10 +31,11 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #0f172a;
             color: white;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -35,45 +44,68 @@
         }
 
 
-        /* =========================
+        /* =========================================
+           SCROLLBAR
+        ========================================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 10px;
+        }
+
+
+        /* =========================================
            NAVBAR
-        ========================= */
+        ========================================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
+
             background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
+
+            backdrop-filter: blur(12px);
+
             border-bottom: 1px solid #334155;
         }
 
         nav {
             width: 90%;
             max-width: 1200px;
+
             margin: auto;
+
+            padding: 20px 0;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            padding: 20px 0;
         }
 
         .logo {
-            font-size: 25px;
+            font-size: 26px;
             font-weight: bold;
             color: #38bdf8;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 28px;
             list-style: none;
         }
 
         .nav-links a {
             color: white;
+            font-size: 15px;
             transition: 0.3s;
         }
 
@@ -82,12 +114,12 @@
         }
 
 
-        /* =========================
+        /* =========================================
            HERO SECTION
-        ========================= */
+        ========================================= */
 
         .hero {
-            min-height: 90vh;
+            min-height: 92vh;
 
             display: flex;
             justify-content: center;
@@ -95,17 +127,97 @@
 
             text-align: center;
 
-            padding: 50px 20px;
+            padding: 70px 20px;
 
             background:
-                radial-gradient(circle at top,
-                #1e3a5f,
-                #0f172a 60%);
+                radial-gradient(
+                    circle at top,
+                    #1e3a5f,
+                    #0f172a 60%
+                );
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background: #38bdf8;
+
+            filter: blur(150px);
+
+            opacity: 0.08;
+
+            top: -100px;
+            left: -100px;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background: #818cf8;
+
+            filter: blur(150px);
+
+            opacity: 0.08;
+
+            bottom: -100px;
+            right: -100px;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
+            z-index: 2;
         }
+
+
+        /* =========================================
+           PROFILE PHOTO
+        ========================================= */
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 5px solid #38bdf8;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 0 35px
+                rgba(56, 189, 248, 0.30);
+
+            transition: 0.4s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+
+            box-shadow:
+                0 0 50px
+                rgba(56, 189, 248, 0.45);
+        }
+
+
+        /* =========================================
+           HERO TEXT
+        ========================================= */
 
         .hero h3 {
             font-size: 22px;
@@ -114,61 +226,93 @@
         }
 
         .hero h1 {
-            font-size: 65px;
+            font-size: 68px;
             color: #38bdf8;
             margin-bottom: 10px;
         }
 
         .hero h2 {
             font-size: 30px;
+            min-height: 48px;
             margin-bottom: 20px;
         }
 
-        .hero p {
-            color: #cbd5e1;
-            max-width: 650px;
-            margin: auto;
+        #typing {
+            color: white;
         }
+
+        .hero p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #cbd5e1;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
 
         .buttons {
             margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
         }
 
         .btn {
             display: inline-block;
 
-            padding: 12px 25px;
-            margin: 8px;
+            padding: 13px 27px;
 
             border-radius: 8px;
 
             background: #38bdf8;
+
             color: #0f172a;
 
             font-weight: bold;
+
+            border: 2px solid #38bdf8;
 
             transition: 0.3s;
         }
 
         .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(56, 189, 248, 0.25);
         }
 
         .btn-outline {
             background: transparent;
             color: #38bdf8;
-            border: 2px solid #38bdf8;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: #0f172a;
         }
 
 
-        /* =========================
-           GENERAL SECTION
-        ========================= */
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
 
         section {
             width: 90%;
             max-width: 1200px;
+
             margin: auto;
 
             padding: 100px 0;
@@ -176,37 +320,59 @@
 
         .section-title {
             text-align: center;
-            font-size: 40px;
 
-            margin-bottom: 50px;
+            font-size: 42px;
 
             color: #38bdf8;
+
+            margin-bottom: 55px;
+        }
+
+        .section-title::after {
+            content: "";
+
+            display: block;
+
+            width: 70px;
+
+            height: 4px;
+
+            background: #38bdf8;
+
+            margin: 12px auto 0;
+
+            border-radius: 10px;
         }
 
 
-        /* =========================
+        /* =========================================
            ABOUT
-        ========================= */
+        ========================================= */
 
         .about {
+            max-width: 850px;
+
+            margin: auto;
+
             text-align: center;
         }
 
         .about p {
-            max-width: 800px;
-            margin: auto;
-
             color: #cbd5e1;
+
             font-size: 18px;
+
+            line-height: 1.9;
         }
 
 
-        /* =========================
+        /* =========================================
            SKILLS
-        ========================= */
+        ========================================= */
 
         .skills-container {
             display: flex;
+
             flex-wrap: wrap;
 
             justify-content: center;
@@ -217,27 +383,198 @@
         .skill {
             background: #1e293b;
 
-            padding: 15px 25px;
+            border: 1px solid #334155;
+
+            padding: 14px 25px;
 
             border-radius: 10px;
-
-            border: 1px solid #334155;
 
             transition: 0.3s;
         }
 
         .skill:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+
             border-color: #38bdf8;
+
             color: #38bdf8;
+
+            box-shadow:
+                0 8px 25px
+                rgba(56, 189, 248, 0.12);
         }
 
 
-        /* =========================
+        /* =========================================
            PROJECTS
-        ========================= */
+        ========================================= */
 
         .projects-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .project-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    #1e293b,
+                    #172033
+                );
+
+            border: 1px solid #334155;
+
+            border-radius: 18px;
+
+            padding: 32px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 4px;
+
+            background: #38bdf8;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.35);
+        }
+
+        .project-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-bottom: 18px;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+
+            font-size: 25px;
+
+            line-height: 1.3;
+        }
+
+        .project-date {
+            color: #94a3b8;
+
+            font-size: 14px;
+
+            white-space: nowrap;
+
+            background: #0f172a;
+
+            padding: 5px 10px;
+
+            border-radius: 6px;
+        }
+
+        .project-card > p {
+            color: #cbd5e1;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+
+            margin: 18px 0;
+
+            color: #cbd5e1;
+        }
+
+        .project-card li {
+            margin-bottom: 9px;
+        }
+
+        .project-card li::marker {
+            color: #38bdf8;
+        }
+
+        .tech-container {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin: 20px 0;
+        }
+
+        .tech {
+            background: #0f172a;
+
+            color: #38bdf8;
+
+            border: 1px solid #334155;
+
+            padding: 5px 10px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+        }
+
+        .project-link {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            background: #38bdf8;
+
+            color: #0f172a;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .project-link:hover {
+            transform: translateX(5px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(56, 189, 248, 0.20);
+        }
+
+
+        /* =========================================
+           EDUCATION
+        ========================================= */
+
+        .education-container {
             display: grid;
 
             grid-template-columns:
@@ -246,19 +583,25 @@
             gap: 25px;
         }
 
-        .project-card {
+        .education-card {
             background: #1e293b;
 
             padding: 30px;
 
             border-radius: 15px;
 
-            border: 1px solid #334155;
+            border-left: 5px solid #38bdf8;
+
+            border-top: 1px solid #334155;
+
+            border-right: 1px solid #334155;
+
+            border-bottom: 1px solid #334155;
 
             transition: 0.3s;
         }
 
-        .project-card:hover {
+        .education-card:hover {
             transform: translateY(-8px);
 
             border-color: #38bdf8;
@@ -268,79 +611,93 @@
                 rgba(0, 0, 0, 0.3);
         }
 
-        .project-card h3 {
+        .education-card h3 {
             color: #38bdf8;
 
-            font-size: 24px;
-
-            margin-bottom: 15px;
-        }
-
-        .project-card p {
-            color: #cbd5e1;
+            font-size: 22px;
 
             margin-bottom: 20px;
         }
 
-        .project-link {
-            color: #38bdf8;
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           EDUCATION
-        ========================= */
-
-        .education-card {
-            max-width: 700px;
-
-            margin: auto;
-
-            background: #1e293b;
-
-            padding: 30px;
-
-            border-radius: 15px;
-
-            border-left: 5px solid #38bdf8;
-        }
-
-        .education-card h3 {
-            color: #38bdf8;
-            font-size: 24px;
-        }
-
         .education-card p {
             color: #cbd5e1;
+
+            margin: 10px 0;
+        }
+
+        .education-card strong {
+            color: white;
         }
 
 
-        /* =========================
+        /* =========================================
+           CV SECTION
+        ========================================= */
+
+        .cv-section {
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #172033,
+                    #0f172a
+                );
+
+            border-radius: 20px;
+
+            padding: 70px 30px;
+
+            border: 1px solid #334155;
+        }
+
+        .cv-section p {
+            color: #cbd5e1;
+
+            max-width: 650px;
+
+            margin: 0 auto 25px;
+        }
+
+        .cv-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+
+        /* =========================================
            CONTACT
-        ========================= */
+        ========================================= */
 
         .contact {
             text-align: center;
         }
 
         .contact p {
-            margin: 15px 0;
             color: #cbd5e1;
+
+            margin: 12px 0;
         }
 
         .social-links {
-            margin-top: 25px;
+            margin-top: 30px;
 
             display: flex;
 
             justify-content: center;
 
-            gap: 20px;
+            flex-wrap: wrap;
+
+            gap: 15px;
         }
 
         .social-links a {
-            padding: 12px 20px;
+            padding: 12px 22px;
 
             border: 1px solid #38bdf8;
 
@@ -353,13 +710,16 @@
 
         .social-links a:hover {
             background: #38bdf8;
+
             color: #0f172a;
+
+            transform: translateY(-4px);
         }
 
 
-        /* =========================
+        /* =========================================
            FOOTER
-        ========================= */
+        ========================================= */
 
         footer {
             text-align: center;
@@ -369,20 +729,24 @@
             background: #020617;
 
             color: #94a3b8;
+
+            border-top: 1px solid #1e293b;
         }
 
 
-        /* =========================
-           SCROLL TO TOP BUTTON
-        ========================= */
+        /* =========================================
+           BACK TO TOP
+        ========================================= */
 
         #topButton {
             position: fixed;
 
             right: 25px;
+
             bottom: 25px;
 
             width: 45px;
+
             height: 45px;
 
             border: none;
@@ -390,24 +754,34 @@
             border-radius: 50%;
 
             background: #38bdf8;
+
             color: #0f172a;
 
             font-size: 20px;
+
+            font-weight: bold;
 
             cursor: pointer;
 
             display: none;
 
             z-index: 999;
+
+            transition: 0.3s;
+        }
+
+        #topButton:hover {
+            transform: translateY(-5px);
         }
 
 
-        /* =========================
-           ANIMATION
-        ========================= */
+        /* =========================================
+           SCROLL ANIMATION
+        ========================================= */
 
         .fade-in {
             opacity: 0;
+
             transform: translateY(30px);
 
             transition:
@@ -417,24 +791,41 @@
 
         .fade-in.show {
             opacity: 1;
+
             transform: translateY(0);
         }
 
 
-        /* =========================
-           MOBILE RESPONSIVE
-        ========================= */
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .education-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
 
         @media (max-width: 768px) {
 
             nav {
                 flex-direction: column;
+
                 gap: 15px;
             }
 
             .nav-links {
                 gap: 15px;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
@@ -443,39 +834,79 @@
             }
 
             .hero h2 {
-                font-size: 24px;
+                font-size: 23px;
+            }
+
+            .profile-photo {
+                width: 160px;
+                height: 160px;
             }
 
             .section-title {
-                font-size: 32px;
+                font-size: 34px;
             }
 
-            .projects-container {
+            .education-container {
                 grid-template-columns: 1fr;
+            }
+
+            .project-top {
+                flex-direction: column;
             }
 
             section {
                 padding: 70px 0;
             }
         }
+
+
+        @media (max-width: 480px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .project-card {
+                padding: 24px;
+            }
+
+            .project-card h3 {
+                font-size: 21px;
+            }
+
+            .nav-links {
+                font-size: 13px;
+            }
+        }
+
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
     <header>
 
         <nav>
 
             <div class="logo">
-                Pawan Kumar
+                Pawan
             </div>
+
 
             <ul class="nav-links">
 
@@ -500,6 +931,10 @@
                 </li>
 
                 <li>
+                    <a href="#cv">CV</a>
+                </li>
+
+                <li>
                     <a href="#contact">Contact</a>
                 </li>
 
@@ -510,37 +945,65 @@
     </header>
 
 
-    <!-- =========================
+    <!-- =========================================
          HERO
-    ========================== -->
+    ========================================== -->
 
-    <section id="home" class="hero">
+    <section id="home"
+             class="hero">
 
         <div class="hero-content">
 
-            <h3>Hello, I'm</h3>
 
-            <h1>Pawan Kumar</h1>
+            <!-- YOUR PHOTO -->
+
+            <img
+                src="images/singh.jpeg"
+                alt="Pawan Singh"
+                class="profile-photo"
+            >
+
+
+            <h3>
+                Hello, I'm
+            </h3>
+
+
+            <h1>
+                Pawan Singh
+            </h1>
+
 
             <h2>
                 <span id="typing"></span>
             </h2>
 
+
             <p>
-                I am a passionate student and aspiring
-                developer interested in programming,
-                web development and technology.
+
+                I am a passionate Computer Science student
+                interested in programming, web development,
+                artificial intelligence and innovative
+                technology.
+
             </p>
+
 
             <div class="buttons">
 
-                <a href="#projects" class="btn">
-                    View Projects
+                <a href="#projects"
+                   class="btn">
+
+                    View My Projects
+
                 </a>
 
-                <a href="#contact"
+
+                <a href="#cv"
                    class="btn btn-outline">
-                    Contact Me
+
+                    View My CV
+
                 </a>
 
             </div>
@@ -550,26 +1013,33 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          ABOUT
-    ========================== -->
+    ========================================== -->
 
-    <section id="about" class="fade-in">
+    <section id="about"
+             class="fade-in">
 
         <h2 class="section-title">
             About Me
         </h2>
 
+
         <div class="about">
 
             <p>
-                Hello! I am Pawan Kumar.
 
-                I am currently studying computer science
-                and learning C++, HTML, CSS and JavaScript.
+                Hello! I am Pawan Singh.
 
-                I enjoy creating projects, solving problems
-                and learning new technologies.
+                I am a Computer Science student with an
+                interest in C++, web development, artificial
+                intelligence and software development.
+
+                I enjoy building practical projects that
+                solve real-world problems. I am continuously
+                improving my programming skills and exploring
+                new technologies.
+
             </p>
 
         </div>
@@ -577,178 +1047,558 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          SKILLS
-    ========================== -->
+    ========================================== -->
 
-    <section id="skills" class="fade-in">
+    <section id="skills"
+             class="fade-in">
 
         <h2 class="section-title">
             My Skills
         </h2>
 
+
         <div class="skills-container">
 
-            <div class="skill">C++</div>
+            <div class="skill">
+                C++
+            </div>
 
-            <div class="skill">HTML</div>
+            <div class="skill">
+                HTML
+            </div>
 
-            <div class="skill">CSS</div>
+            <div class="skill">
+                CSS
+            </div>
 
-            <div class="skill">JavaScript</div>
+            <div class="skill">
+                JavaScript
+            </div>
 
-            <div class="skill">Git</div>
+            <div class="skill">
+                Python
+            </div>
 
-            <div class="skill">GitHub</div>
+            <div class="skill">
+                Git
+            </div>
+
+            <div class="skill">
+                GitHub
+            </div>
+
+            <div class="skill">
+                Data Structures & Algorithms
+            </div>
+
+            <div class="skill">
+                Artificial Intelligence
+            </div>
+
+            <div class="skill">
+                Machine Learning
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          PROJECTS
-    ========================== -->
+    ========================================== -->
 
-    <section id="projects" class="fade-in">
+    <section id="projects"
+             class="fade-in">
 
         <h2 class="section-title">
             My Projects
         </h2>
 
+
         <div class="projects-container">
 
 
+            <!-- SMART IRRIGATION -->
+
             <div class="project-card">
 
-                <h3>
-                    Resume Builder
-                </h3>
+                <div class="project-top">
+
+                    <h3>
+                        Smart Irrigation System
+                    </h3>
+
+                    <span class="project-date">
+                        Apr 2026
+                    </span>
+
+                </div>
+
 
                 <p>
-                    A web application that allows
-                    users to create professional resumes.
+                    Developed an automated irrigation
+                    system based on soil moisture levels.
                 </p>
 
-                <a href="#"
-                   class="project-link">
+
+                <ul>
+
+                    <li>
+                        Developed an
+                        <strong>
+                            automated irrigation system
+                        </strong>
+                        based on soil moisture levels.
+                    </li>
+
+                    <li>
+                        Integrated
+                        <strong>
+                            Arduino Uno
+                        </strong>
+                        and a soil-moisture sensor for
+                        real-time monitoring.
+                    </li>
+
+                    <li>
+                        Automated water supply using a
+                        <strong>
+                            pump and relay-based control system.
+                        </strong>
+                    </li>
+
+                    <li>
+                        Implemented
+                        <strong>
+                            controlled irrigation
+                        </strong>
+                        to reduce unnecessary water usage.
+                    </li>
+
+                    <li>
+                        Built and tested an
+                        <strong>
+                            IoT-based prototype
+                        </strong>
+                        to reduce manual effort and improve
+                        water efficiency.
+                    </li>
+
+                </ul>
+
+
+                <div class="tech-container">
+
+                    <span class="tech">
+                        Arduino Uno
+                    </span>
+
+                    <span class="tech">
+                        Soil Moisture Sensor
+                    </span>
+
+                    <span class="tech">
+                        IoT
+                    </span>
+
+                    <span class="tech">
+                        Relay
+                    </span>
+
+                    <span class="tech">
+                        Water Pump
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://drive.google.com/file/d/1hFuYb-G7iyOG-2WR3TVNfwuF7AyOpaOt/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+
                     View Project →
+
                 </a>
 
             </div>
 
 
-            <div class="project-card">
-
-                <h3>
-                    Employee Management
-                </h3>
-
-                <p>
-                    A C++ based project for managing
-                    employee records and information.
-                </p>
-
-                <a href="#"
-                   class="project-link">
-                    View Project →
-                </a>
-
-            </div>
-
+            <!-- AGRISARTHI -->
 
             <div class="project-card">
 
-                <h3>
-                    Portfolio Website
-                </h3>
+                <div class="project-top">
+
+                    <h3>
+                        AgriSarthi – AI Plant Disease Detection System
+                    </h3>
+
+                    <span class="project-date">
+                        Feb 2026
+                    </span>
+
+                </div>
+
 
                 <p>
-                    A responsive personal portfolio
-                    website created using HTML, CSS
-                    and JavaScript.
+
+                    Developed an AI-based system to detect
+                    plant diseases from leaf images and
+                    provide useful treatment recommendations.
+
                 </p>
 
-                <a href="#"
-                   class="project-link">
+
+                <ul>
+
+                    <li>
+                        Developed an
+                        <strong>
+                            AI-based system
+                        </strong>
+                        to detect plant diseases from
+                        leaf images.
+                    </li>
+
+                    <li>
+                        Used
+                        <strong>
+                            Python, CNN and image processing
+                        </strong>
+                        for automated disease classification.
+                    </li>
+
+                    <li>
+                        Trained a
+                        <strong>
+                            deep learning model
+                        </strong>
+                        to identify crop diseases accurately
+                        from visual data.
+                    </li>
+
+                    <li>
+                        Built a simple interface to display
+                        <strong>
+                            disease results and treatment
+                            recommendations.
+                        </strong>
+                    </li>
+
+                    <li>
+                        Designed for
+                        <strong>
+                            early disease detection
+                        </strong>
+                        to help farmers improve crop health
+                        and reduce crop loss.
+                    </li>
+
+                </ul>
+
+
+                <div class="tech-container">
+
+                    <span class="tech">
+                        Python
+                    </span>
+
+                    <span class="tech">
+                        CNN
+                    </span>
+
+                    <span class="tech">
+                        Deep Learning
+                    </span>
+
+                    <span class="tech">
+                        Image Processing
+                    </span>
+
+                    <span class="tech">
+                        AI
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://agrisarthiaiapplicationbuildcommuni.vercel.app/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+
                     View Project →
+
                 </a>
 
             </div>
-
 
         </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          EDUCATION
-    ========================== -->
+    ========================================== -->
 
-    <section id="education" class="fade-in">
+    <section id="education"
+             class="fade-in">
 
         <h2 class="section-title">
             Education
         </h2>
 
-        <div class="education-card">
 
-            <h3>
-                Bachelor of Technology
-            </h3>
+        <div class="education-container">
 
-            <p>
-                Lovely Professional University
-            </p>
 
-            <p>
-                Computer Science & Engineering
-            </p>
+            <!-- BTECH -->
 
-            <p>
-                2025 - 2029
-            </p>
+            <div class="education-card">
+
+                <h3>
+                    Bachelor of Technology
+                </h3>
+
+                <p>
+
+                    <strong>
+                        Branch:
+                    </strong>
+
+                    Computer Science & Engineering
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        College:
+                    </strong>
+
+                    Your College / University
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Duration:
+                    </strong>
+
+                    2025 - 2029
+
+                </p>
+
+            </div>
+
+
+            <!-- HIGHER SECONDARY -->
+
+            <div class="education-card">
+
+                <h3>
+                    Higher Secondary Education
+                </h3>
+
+                <p>
+
+                    <strong>
+                        School:
+                    </strong>
+
+                    Swami Vivekananda Mission School
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Address:
+                    </strong>
+
+                    Aurangabad, Bihar
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Percentage:
+                    </strong>
+
+                    77%
+
+                </p>
+
+            </div>
+
+
+            <!-- SECONDARY -->
+
+            <div class="education-card">
+
+                <h3>
+                    Secondary Education
+                </h3>
+
+                <p>
+
+                    <strong>
+                        School:
+                    </strong>
+
+                    Swami Vivekananda Mission School
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Address:
+                    </strong>
+
+                    Aurangabad, Bihar
+
+                </p>
+
+                <p>
+
+                    <strong>
+                        Percentage:
+                    </strong>
+
+                    74%
+
+                </p>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
+    <!-- =========================================
+         CV
+    ========================================== -->
 
-    <section id="contact" class="contact fade-in">
+    <section id="cv"
+             class="fade-in">
+
+        <div class="cv-section">
+
+            <h2 class="section-title">
+                My CV
+            </h2>
+
+
+            <p>
+
+                Interested in learning more about my
+                education, projects, skills and experience?
+                View my complete CV below.
+
+            </p>
+
+
+            <div class="cv-buttons">
+
+
+                <a
+                    href="https://drive.google.com/file/d/1ff0R5_YrpS4IdUw4ooBWxNs2fboRp83t/view?usp=drivesdk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn"
+                >
+
+                    📄 View My CV
+
+                </a>
+
+
+                <a
+                    href="https://drive.google.com/uc?export=download&id=1ff0R5_YrpS4IdUw4ooBWxNs2fboRp83t"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline"
+                >
+
+                    ⬇ Download CV
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section id="contact"
+             class="contact fade-in">
 
         <h2 class="section-title">
             Contact Me
         </h2>
 
-        <p>
-            Email:
-            pawansinghch89@gmail.com
-        </p>
 
         <p>
-            Feel free to contact me for
-            projects or collaboration.
+            Email:
+            your@email.com
         </p>
+
+
+        <p>
+
+            Feel free to contact me for projects,
+            collaboration and opportunities.
+
+        </p>
+
 
         <div class="social-links">
 
-            <a href="https://github.com/pawansinghch89"
-               target="_blank">
+
+            <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
                 GitHub
+
             </a>
 
-            <a href="https://www.linkedin.com/in/pawan-singh-5474023a0?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-               target="_blank">
+
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
                 LinkedIn
+
             </a>
 
-            <a href="pawansinghch89@gmail.com">
+
+            <a href="mailto:your@email.com">
+
                 Email
+
             </a>
 
         </div>
@@ -756,49 +1606,69 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          FOOTER
-    ========================== -->
+    ========================================== -->
 
     <footer>
 
         <p>
-            © 2026 Pawan Kumar.
+
+            ©️ 2026 Pawan Singh.
             All Rights Reserved.
+
         </p>
 
     </footer>
 
 
-    <!-- SCROLL TOP BUTTON -->
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
 
-    <button id="topButton">
+    <button
+        id="topButton"
+        aria-label="Back to top"
+    >
+
         ↑
+
     </button>
 
 
-    <!-- =========================
-         INTERNAL JAVASCRIPT
-    ========================== -->
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
 
-        /* =========================
+        /* =========================================
            TYPING ANIMATION
-        ========================== */
+        ========================================== */
 
         const typingElement =
             document.getElementById("typing");
 
+
         const words = [
+
             "Computer Science Student",
+
             "C++ Developer",
+
             "Web Developer",
+
+            "AI Enthusiast",
+
             "Future Software Engineer"
+
         ];
 
+
         let wordIndex = 0;
+
         let characterIndex = 0;
+
         let deleting = false;
 
 
@@ -806,6 +1676,7 @@
 
             const currentWord =
                 words[wordIndex];
+
 
             if (!deleting) {
 
@@ -816,6 +1687,7 @@
                     );
 
                 characterIndex++;
+
 
                 if (
                     characterIndex ===
@@ -842,34 +1714,42 @@
 
                 characterIndex--;
 
+
                 if (characterIndex === 0) {
 
                     deleting = false;
 
                     wordIndex++;
 
+
                     if (
                         wordIndex ===
                         words.length
                     ) {
+
                         wordIndex = 0;
                     }
+
                 }
+
             }
+
 
             setTimeout(
                 typeEffect,
                 deleting ? 50 : 100
             );
+
         }
 
 
         typeEffect();
 
 
-        /* =========================
-           SCROLL TO TOP
-        ========================== */
+
+        /* =========================================
+           BACK TO TOP
+        ========================================== */
 
         const topButton =
             document.getElementById(
@@ -881,7 +1761,9 @@
             "scroll",
             function () {
 
-                if (window.scrollY > 400) {
+                if (
+                    window.scrollY > 400
+                ) {
 
                     topButton.style.display =
                         "block";
@@ -890,6 +1772,7 @@
 
                     topButton.style.display =
                         "none";
+
                 }
 
             }
@@ -901,17 +1784,21 @@
             function () {
 
                 window.scrollTo({
+
                     top: 0,
+
                     behavior: "smooth"
+
                 });
 
             }
         );
 
 
-        /* =========================
-           SCROLL ANIMATION
-        ========================== */
+
+        /* =========================================
+           SCROLL REVEAL
+        ========================================== */
 
         const fadeElements =
             document.querySelectorAll(
@@ -927,6 +1814,7 @@
                     const position =
                         element.getBoundingClientRect();
 
+
                     if (
                         position.top <
                         window.innerHeight - 100
@@ -940,6 +1828,7 @@
 
                 }
             );
+
         }
 
 
@@ -952,9 +1841,10 @@
         revealOnScroll();
 
 
-        /* =========================
+
+        /* =========================================
            NAVBAR ACTIVE LINK
-        ========================== */
+        ========================================== */
 
         const navLinks =
             document.querySelectorAll(
@@ -971,10 +1861,13 @@
 
                         navLinks.forEach(
                             function (item) {
+
                                 item.style.color =
-                                    "white";
+                                    "#ffffff";
+
                             }
                         );
+
 
                         this.style.color =
                             "#38bdf8";
@@ -990,4 +1883,3 @@
 </body>
 
 </html>
-
